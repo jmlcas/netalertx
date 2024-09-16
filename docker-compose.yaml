@@ -1,0 +1,14 @@
+services:
+
+    netalertx:
+        image: jokobsk/netalertx:latest
+        container_name: netalertx
+        volumes:
+            - ./config:/app/config
+            - ./db:/app/db
+        environment:
+            - TZ=Europe/Madrid
+        ports:
+            - "20211:20211/tcp"
+        restart: unless-stopped
+
